@@ -19,8 +19,26 @@ def lambda_handler(event, context):
     for vol in unattached:
         print(vol)
 
+        # --- Check 2: stopped EC2 instances ---
+    stopped_instances = []
+    instances = ec2.describe_instances(
+        Filters=[{'Name': 'instance-state-name', 'Values': ['stopped']}]
+    )
+
+    for reservation in instances['Reservations']:
+        for instance in reservation['Instances']:
+            stopped_instances.append({
+                'InstanceId': instance['InstanceId'],
+                'Type': instance['InstanceType'],
+                'StoppedSince': str(instance.get('StateTransitionReason', 'unknown'))
+            })
+
+    print(f"Found {len(stopped_instances)} stopped EC2 instances")
+
     return {
         'statusCode': 200,
         'unattached_volumes': unattached,
-        'count': len(unattached)
+        'unattached_count': len(unattached),
+        'stopped_instances': stopped_instances,
+        'stopped_count': len(stopped_instances)
     }
