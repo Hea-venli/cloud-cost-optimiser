@@ -1,4 +1,6 @@
 import boto3
+import json
+from datetime import datetime
 
 def lambda_handler(event, context):
     ec2 = boto3.client('ec2')
@@ -49,7 +51,25 @@ def lambda_handler(event, context):
                 })
 
     print(f"Found {len(untagged)} untagged EC2 instances")
+# --- Save report to S3 ---
+    s3 = boto3.client('s3')
 
+    report = {
+        'scan_date': str(datetime.now()),
+        'unattached_volumes': unattached,
+        'stopped_instances': stopped_instances,
+        'untagged_instances': untagged
+    }
+
+    filename = f"reports/{datetime.now().strftime('%Y-%m-%d')}.json"
+
+    s3.put_object(
+        Bucket='heavenli-cost-reports-2026',
+        Key=filename,
+        Body=json.dumps(report, indent=2)
+    )
+
+    print(f"Report saved to S3: {filename}")
     return {
         'statusCode': 200,
         'unattached_volumes': unattached,
