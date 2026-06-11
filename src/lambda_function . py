@@ -51,7 +51,7 @@ def lambda_handler(event, context):
                 })
 
     print(f"Found {len(untagged)} untagged EC2 instances")
-# --- Save report to S3 ---
+    # --- Save report to S3 ---
     s3 = boto3.client('s3')
 
     report = {
@@ -70,6 +70,24 @@ def lambda_handler(event, context):
     )
 
     print(f"Report saved to S3: {filename}")
+    # --- Send summary email via SNS ---
+    sns = boto3.client('sns')
+
+    summary = (
+        f"Cost Optimiser daily scan complete.\n\n"
+        f"Unattached EBS volumes: {len(unattached)}\n"
+        f"Stopped EC2 instances: {len(stopped_instances)}\n"
+        f"Untagged instances: {len(untagged)}\n\n"
+        f"Full report: s3://heavenli-cost-reports-2026/{filename}"
+    )
+
+    sns.publish(
+        TopicArn='arn:aws:sns:eu-west-2:359932033588:cost-report-alerts',
+        Subject='AWS Cost Optimiser - Daily Report',
+        Message=summary
+    )
+
+    print("Summary email sent")
     return {
         'statusCode': 200,
         'unattached_volumes': unattached,
