@@ -7,7 +7,7 @@ A tool that checks my AWS account every day for things that waste money,it also 
 | File | What it does |
 |------|--------------|
 | [`main.tf`](main.tf) | All the AWS infrastructure as Terraform code |
-| [`src/lambda_function.py`](src/lambda_function .py) | The Python scanner (runs the 3 cost checks) |
+| [`src/lambda_function.py`](src/lambda_function.py) | The Python scanner (runs the 3 cost checks) |
 
 ## The problem
 
