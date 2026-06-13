@@ -2,6 +2,13 @@
 
 A tool that checks my AWS account every day for things that waste money,it also saves a report, and emails me a summary. It runs by itself on a schedule, I don't have to do anything.
 
+## 📂 Where's the code?
+
+| File | What it does |
+|------|--------------|
+| [`main.tf`](main.tf) | All the AWS infrastructure as Terraform code |
+| [`src/lambda_function.py`](src/lambda_function.py) | The Python scanner (runs the 3 cost checks) |
+
 ## The problem
 
 Cloud accounts quietly waste money on things people forget about, such as storage left behind, servers switched off but still charging, and resources nobody labelled so nobody cleans them up. This tool finds them automatically.
