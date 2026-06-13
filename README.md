@@ -44,6 +44,9 @@ Cloud accounts quietly waste money on things people forget about, storage left b
 ## It working
 
 ![Successful run](AWS%20Lambda%20success%20(screen%20shot%201).png)
+![Lambda success 2](AWS%20Lambda%20success%20(screen%20shot%202).png)
+![S3 reports](AWS%20S3%20reports.png)
+![Terraform state list](Terraform%20state%20list.png)
 ![Daily email](AWS%20Email.png)
 
 ## What I learned
