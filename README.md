@@ -1,6 +1,6 @@
 # Cloud Cost Optimiser
 
-A tool that checks my AWS account every day for things that waste money,it also saves a report, and emails me a summary. It runs by itself on a schedule, I don't have to do anything.
+A tool that checks my AWS account every day for things that waste money, it also saves a report, and emails me a summary. It runs by itself on a schedule, It runs on a schedule with no manual involvement.
 
 ## Where's the code?
 
@@ -69,7 +69,7 @@ Cloud accounts quietly waste money on things people forget about, such as storag
 
 ## What I learned
 
-This was my first hands on AWS project after passing my Solutions Architect Associate exam. I learned how to read errors instead of fearing them,and how to rebuild my whole project from code using Terraform.
+This was my first hands on AWS project after passing my Solutions Architect Associate exam. I learned how to read errors instead of fearing them, and how to rebuild my whole project from code using Terraform.
 
 ## Why build this? (AWS already has tools for this)
 
@@ -79,7 +79,7 @@ AWS already offers a lot here:
 - **Trusted Advisor** flags some idle and underused resources.
 - **CloudWatch** monitors performance and can raise alarms.
 
-I built this this **to learn AWS by doing**, not just by passing an exam.
+I built this **to learn AWS by doing**, not just by passing an exam.
 
 Re-creating a slice of this functionality myself meant designing the whole **backend** from scratch — wiring together Lambda, IAM (least-privilege), S3, SNS, EventBridge and Terraform into one automated system. Building a backend that runs on a schedule, handles permissions safely, stores its own reports and reports failures teaches you things an exam never will — especially when something breaks and you have to fix it.
 
