@@ -71,6 +71,20 @@ Cloud accounts quietly waste money on things people forget about, such as storag
 
 This was my first hands on AWS project after passing my Solutions Architect Associate exam. I learned how to read errors instead of fearing them,and how to rebuild my whole project from code using Terraform.
 
+## Why build this? (AWS already has tools for this)
+
+AWS already offers a lot here:
+
+- **Cost Explorer** shows spend, and can break it down by tags.
+- **Trusted Advisor** flags some idle and underused resources.
+- **CloudWatch** monitors performance and can raise alarms.
+
+I built this this **to learn AWS by doing**, not just by passing an exam.
+
+Re-creating a slice of this functionality myself meant designing the whole **backend** from scratch — wiring together Lambda, IAM (least-privilege), S3, SNS, EventBridge and Terraform into one automated system. Building a backend that runs on a schedule, handles permissions safely, stores its own reports and reports failures teaches you things an exam never will — especially when something breaks and you have to fix it.
+
+That hands-on backend understanding is the point of this project.
+
 ## What I'd add next
 
 - Handle very large accounts
