@@ -43,8 +43,8 @@ Cloud accounts quietly waste money on things people forget about, storage left b
 
 ## It working
 
-![Successful run](docs/AWS%20Lambda%20success%20(screen%20shot%201).png)
-![Daily email](docs/AWS%20Email.png)
+![Successful run](AWS%20Lambda%20success%20(screen%20shot%201).png)
+![Daily email](AWS%20Email.png)
 
 ## What I learned
 
