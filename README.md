@@ -21,7 +21,7 @@ Cloud accounts quietly waste money on things people forget about, such as storag
 
 ## How it works
 
-![Architecture diagram](architecture.png)
+
 
 1. A timer (EventBridge) wakes the tool up once a day
 2. The tool (a Lambda function written in Python) checks the account
