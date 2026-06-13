@@ -1,10 +1,10 @@
 # Cloud Cost Optimiser
 
-A tool that checks my AWS account every day for things that waste money, saves a report, and emails me a summary. It runs by itself on a schedule, I don't have to do anything.
+A tool that checks my AWS account every day for things that waste money,it also saves a report, and emails me a summary. It runs by itself on a schedule, I don't have to do anything.
 
 ## The problem
 
-Cloud accounts quietly waste money on things people forget about, storage left behind, servers switched off but still charging, and resources nobody labelled so nobody cleans them up. This tool finds them automatically.
+Cloud accounts quietly waste money on things people forget about, such as storage left behind, servers switched off but still charging, and resources nobody labelled so nobody cleans them up. This tool finds them automatically.
 
 ## What it checks
 
@@ -62,7 +62,7 @@ Cloud accounts quietly waste money on things people forget about, storage left b
 
 ## What I learned
 
-This was my first hands on AWS project after passing my Solutions Architect Associate exam. I learned how to read errors instead of fearing them, how to write security rules by hand, and how to rebuild my whole project from code using Terraform.
+This was my first hands on AWS project after passing my Solutions Architect Associate exam. I learned how to read errors instead of fearing them,and how to rebuild my whole project from code using Terraform.
 
 ## What I'd add next
 
