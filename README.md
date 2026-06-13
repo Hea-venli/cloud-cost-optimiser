@@ -38,6 +38,33 @@ Cloud accounts quietly waste money on things people forget about, such as storag
 - **IAM** — controls what the tool is allowed to do
 - **Terraform** — lets me rebuild the whole thing from code
 
+## How to deploy
+
+You'll need an AWS account, the AWS CLI configured, and Terraform installed.
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/Hea-venli/cloud-cost-optimiser.git
+cd cloud-cost-optimiser
+
+# 2. Download the AWS provider
+terraform init
+
+# 3. See what will be created (nothing is built yet)
+terraform plan
+
+# 4. Build it
+terraform apply
+```
+
+After `apply`, confirm your email subscription (SNS sends a confirmation link), and the daily scan will run automatically at 9am.
+
+To remove everything afterwards:
+
+```bash
+terraform destroy
+```
+
 ## Choices I made
 
 **I used Lambda instead of a server.** The job takes about 2 seconds a day. A normal server would cost money all day doing nothing. Lambda only runs when needed and costs almost nothing.
