@@ -82,7 +82,7 @@ def lambda_handler(event, context):
     )
 
     sns.publish(
-        TopicArn='arn:aws:sns:eu-west-2:359932033588:cost-report-alerts',
+        TopicArn='arn:aws:sns:eu-west-2:YOUR_ACCOUNT_ID:cost-report-alerts',
         Subject='AWS Cost Optimiser - Daily Report',
         Message=summary
     )
