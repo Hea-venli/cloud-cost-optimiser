@@ -52,20 +52,20 @@ Cloud accounts quietly waste money on things people forget about, such as storag
 
 **The daily email summary I receive:**
 
-![Daily email](AWS%20Email.png)
+![Daily email](screenshots/daily-email.png)
 
 **The Lambda function running successfully:**
 
-![Successful run](AWS%20Lambda%20success%20(screen%20shot%201).png)
-![Lambda success 2](AWS%20Lambda%20success%20(screen%20shot%202).png)
+![Successful run](screenshots/lambda-success-1.png)
+![Lambda success 2](screenshots/lambda-success-2.png)
 
 **Reports saved in S3, one per day:**
 
-![S3 reports](AWS%20S3%20reports.png)
+![S3 reports](screenshots/s3-reports.png)
 
 **The whole project built as code (Terraform):**
 
-![Terraform state list](Terraform%20state%20list.png)
+![Terraform state list](screenshots/terraform-state.png)
 
 ## What I learned
 
