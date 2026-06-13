@@ -4,7 +4,7 @@ A tool that checks my AWS account every day for things that waste money, saves a
 
 ## The problem
 
-Cloud accounts quietly waste money on things people forget about — storage left behind, servers switched off but still charging, and resources nobody labelled so nobody cleans them up. This tool finds them automatically.
+Cloud accounts quietly waste money on things people forget about, storage left behind, servers switched off but still charging, and resources nobody labelled so nobody cleans them up. This tool finds them automatically.
 
 ## What it checks
 
@@ -48,7 +48,7 @@ Cloud accounts quietly waste money on things people forget about — storage lef
 
 ## What I learned
 
-This was my first hands-on AWS project after passing my Solutions Architect Associate exam. I learned how to read errors instead of fearing them, how to write security rules by hand, and how to rebuild my whole project from code using Terraform.
+This was my first hands on AWS project after passing my Solutions Architect Associate exam. I learned how to read errors instead of fearing them, how to write security rules by hand, and how to rebuild my whole project from code using Terraform.
 
 ## What I'd add next
 
