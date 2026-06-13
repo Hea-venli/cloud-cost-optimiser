@@ -2,7 +2,7 @@
 
 A tool that checks my AWS account every day for things that waste money,it also saves a report, and emails me a summary. It runs by itself on a schedule, I don't have to do anything.
 
-## 📂 Where's the code?
+## Where's the code?
 
 | File | What it does |
 |------|--------------|
