@@ -1,6 +1,6 @@
 # Cloud Cost Optimiser
 
-A tool that checks my AWS account every day for things that waste money, it also saves a report, and emails me a summary. It runs by itself on a schedule, It runs on a schedule with no manual involvement.
+A tool that checks my AWS account every day for things that waste money, it also saves a report, and emails me a summary. It runs on a schedule with no manual involvement.
 
 ## Where's the code?
 
