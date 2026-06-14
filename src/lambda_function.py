@@ -1,6 +1,11 @@
 import boto3
 import json
+import os
 from datetime import datetime
+
+# Read settings from environment variables (set by Terraform)
+REPORTS_BUCKET = os.environ['REPORTS_BUCKET']
+SNS_TOPIC_ARN = os.environ['SNS_TOPIC_ARN']
 
 def lambda_handler(event, context):
     ec2 = boto3.client('ec2')
@@ -63,8 +68,8 @@ def lambda_handler(event, context):
 
     filename = f"reports/{datetime.now().strftime('%Y-%m-%d')}.json"
 
-    s3.put_object(
-        Bucket='heavenli-cost-reports-2026',
+   s3.put_object(
+        Bucket=REPORTS_BUCKET,
         Key=filename,
         Body=json.dumps(report, indent=2)
     )
@@ -78,11 +83,11 @@ def lambda_handler(event, context):
         f"Unattached EBS volumes: {len(unattached)}\n"
         f"Stopped EC2 instances: {len(stopped_instances)}\n"
         f"Untagged instances: {len(untagged)}\n\n"
-        f"Full report: s3://heavenli-cost-reports-2026/{filename}"
+        f"Full report: s3://{REPORTS_BUCKET}/{filename}"
     )
 
     sns.publish(
-        TopicArn='arn:aws:sns:eu-west-2:YOUR_ACCOUNT_ID:cost-report-alerts',
+        TopicArn=SNS_TOPIC_ARN,
         Subject='AWS Cost Optimiser - Daily Report',
         Message=summary
     )
